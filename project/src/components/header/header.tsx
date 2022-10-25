@@ -1,11 +1,11 @@
-import HeaderLogo from '../header-logo/header-log';
+import HeaderLogo from '../header-logo/header-logo';
 import NavAuth from '../nav-auth/nav-auth';
 
 type HeaderProps = {
-  isHeaderAuth?: boolean;
+  isHeaderAuthToBeRendered?: boolean;
 }
 
-function Header({isHeaderAuth}: HeaderProps): JSX.Element {
+function Header({isHeaderAuthToBeRendered}: HeaderProps): JSX.Element {
   return (
     <header className="header">
       <div className="container">
@@ -13,7 +13,7 @@ function Header({isHeaderAuth}: HeaderProps): JSX.Element {
           <div className="header__left">
             <HeaderLogo />
           </div>
-          {isHeaderAuth && <NavAuth />}
+          {isHeaderAuthToBeRendered !== false && <NavAuth />}
         </div>
       </div>
     </header>
