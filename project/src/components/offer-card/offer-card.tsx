@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import LabelPremium from '../label-premium/label-premium';
 
 type OfferCardProps = PropsWithChildren <{
   offerData: {
@@ -16,7 +17,7 @@ function OfferCard({offerData}: OfferCardProps): JSX.Element {
     <article className="cities__card place-card">
       {offerData.isPremium &&
         <div className="place-card__mark">
-          <span>Premium</span>
+          <LabelPremium />
         </div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
