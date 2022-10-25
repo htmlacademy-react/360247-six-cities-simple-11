@@ -16,7 +16,7 @@ type OfferListProps = PropsWithChildren <{
 function OfferList({offersData}: OfferListProps): JSX.Element {
   return (
     <React.Fragment>
-      {offersData.map((offer: typeof offersData[0]) => <OfferCard offerData={offer} key={offer.id} />)}
+      {offersData.map((offer) => <OfferCard offerData={offer} key={offer.id} />)}
     </React.Fragment>
   );
 }
