@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import OfferCard from '../offer-card/offer-card';
 
-type OfferListProps = {
+type OfferListProps = PropsWithChildren <{
   offersData: {
     title: string;
     imageUrl: string;
@@ -11,7 +11,7 @@ type OfferListProps = {
     isPremium: boolean;
     id: number;
   }[];
-}
+}>
 
 function OfferList({offersData}: OfferListProps): JSX.Element {
   return (

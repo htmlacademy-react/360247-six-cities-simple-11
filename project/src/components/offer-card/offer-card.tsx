@@ -1,4 +1,6 @@
-type OfferCardProps = {
+import { PropsWithChildren } from 'react';
+
+type OfferCardProps = PropsWithChildren <{
   offerData: {
     title: string;
     imageUrl: string;
@@ -7,7 +9,7 @@ type OfferCardProps = {
     ratingInPercents: number;
     isPremium: boolean;
   };
-}
+}>
 
 function OfferCard({offerData}: OfferCardProps): JSX.Element {
   return (

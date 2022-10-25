@@ -1,9 +1,10 @@
+import { PropsWithChildren } from 'react';
 import HeaderLogo from '../header-logo/header-logo';
 import NavAuth from '../nav-auth/nav-auth';
 
-type HeaderProps = {
+type HeaderProps = PropsWithChildren <{
   isHeaderAuthToBeRendered?: boolean;
-}
+}>
 
 function Header({isHeaderAuthToBeRendered}: HeaderProps): JSX.Element {
   return (

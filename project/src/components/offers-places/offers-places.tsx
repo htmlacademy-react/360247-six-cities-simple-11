@@ -1,7 +1,8 @@
+import { PropsWithChildren } from 'react';
 import OffersFilters from '../offers-filters/offers-filters';
 import OfferList from '../offers-list/offers-list';
 
-type OfferPlacesProps = {
+type OfferPlacesProps = PropsWithChildren <{
   offersData: {
     title: string;
     imageUrl: string;
@@ -11,7 +12,7 @@ type OfferPlacesProps = {
     isPremium: boolean;
     id: number;
   }[];
-}
+}>
 
 function OfferPlaces({offersData}: OfferPlacesProps): JSX.Element {
 

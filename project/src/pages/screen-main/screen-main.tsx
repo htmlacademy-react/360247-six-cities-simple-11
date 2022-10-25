@@ -2,8 +2,9 @@ import Header from '../../components/header/header';
 import NavCities from '../../components/nav-cities/nav-cities';
 import Map from '../../components/map/map';
 import OffersPlaces from '../../components/offers-places/offers-places';
+import { PropsWithChildren } from 'react';
 
-type ScreenMainProps = {
+type ScreenMainProps = PropsWithChildren <{
   offersData: {
     title: string;
     imageUrl: string;
@@ -13,7 +14,7 @@ type ScreenMainProps = {
     isPremium: boolean;
     id: number;
   }[];
-}
+}>
 
 function ScreenMain({offersData}: ScreenMainProps): JSX.Element {
   return (

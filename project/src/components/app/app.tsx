@@ -1,8 +1,9 @@
+import { PropsWithChildren } from 'react';
 import ScreenAuth from '../../pages/screen-auth/screen-auth';
 import ScreenMain from '../../pages/screen-main/screen-main';
 import ScreenOffer from '../../pages/screen-offer/screen-offer';
 
-type AppScreenProps = {
+type AppScreenProps = PropsWithChildren <{
   offersData: {
     title: string;
     imageUrl: string;
@@ -12,7 +13,7 @@ type AppScreenProps = {
     isPremium: boolean;
     id: number;
   }[];
-}
+}>
 
 function App({offersData}: AppScreenProps): JSX.Element {
   return (
