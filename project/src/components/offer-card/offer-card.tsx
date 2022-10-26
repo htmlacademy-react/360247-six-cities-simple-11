@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
-import { offerDataType } from '../../types';
+import { offerDataType, AppRoute } from '../../types';
 import LabelPremium from '../label-premium/label-premium';
+import { Link } from 'react-router-dom';
 
 type OfferCardProps = PropsWithChildren <{offerData: offerDataType}>
 
@@ -13,7 +14,7 @@ function OfferCard({offerData}: OfferCardProps): JSX.Element {
           <LabelPremium />
         </div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`${AppRoute.Room}/${offerData.id}`}>
           <img
             className="place-card__image"
             src={offerData.imageUrl}
@@ -21,7 +22,7 @@ function OfferCard({offerData}: OfferCardProps): JSX.Element {
             height={200}
             alt="Place image"
           />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -37,9 +38,9 @@ function OfferCard({offerData}: OfferCardProps): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">
+          <Link to={`${AppRoute.Room}/:${offerData.id}`}>
             {offerData.title}
-          </a>
+          </Link>
         </h2>
         <p className="place-card__type">{offerData.type}</p>
       </div>

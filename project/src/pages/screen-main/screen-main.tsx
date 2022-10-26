@@ -9,7 +9,7 @@ type ScreenMainProps = PropsWithChildren <{offersData: offerDataType[]}>
 
 function ScreenMain({offersData}: ScreenMainProps): JSX.Element {
   return (
-    <>
+    <div className="page page--gray page--main">
       <Header />
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
@@ -21,7 +21,7 @@ function ScreenMain({offersData}: ScreenMainProps): JSX.Element {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 }
 
