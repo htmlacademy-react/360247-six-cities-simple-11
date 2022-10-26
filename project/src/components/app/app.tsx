@@ -2,18 +2,10 @@ import { PropsWithChildren } from 'react';
 import ScreenAuth from '../../pages/screen-auth/screen-auth';
 import ScreenMain from '../../pages/screen-main/screen-main';
 import ScreenOffer from '../../pages/screen-offer/screen-offer';
+import { offerDataType } from '../../types';
 
-type AppScreenProps = PropsWithChildren <{
-  offersData: {
-    title: string;
-    imageUrl: string;
-    type: string;
-    price: number;
-    ratingInPercents: number;
-    isPremium: boolean;
-    id: number;
-  }[];
-}>
+
+type AppScreenProps = PropsWithChildren <{offersData: offerDataType[]}>
 
 function App({offersData}: AppScreenProps): JSX.Element {
   return (

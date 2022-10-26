@@ -1,18 +1,11 @@
 import { PropsWithChildren } from 'react';
+import { offerDataType } from '../../types';
 import LabelPremium from '../label-premium/label-premium';
 
-type OfferCardProps = PropsWithChildren <{
-  offerData: {
-    title: string;
-    imageUrl: string;
-    type: string;
-    price: number;
-    ratingInPercents: number;
-    isPremium: boolean;
-  };
-}>
+type OfferCardProps = PropsWithChildren <{offerData: offerDataType}>
 
 function OfferCard({offerData}: OfferCardProps): JSX.Element {
+
   return (
     <article className="cities__card place-card">
       {offerData.isPremium &&

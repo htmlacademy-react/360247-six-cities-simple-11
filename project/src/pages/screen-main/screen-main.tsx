@@ -3,18 +3,9 @@ import NavCities from '../../components/nav-cities/nav-cities';
 import Map from '../../components/map/map';
 import OffersPlaces from '../../components/offers-places/offers-places';
 import { PropsWithChildren } from 'react';
+import { offerDataType } from '../../types';
 
-type ScreenMainProps = PropsWithChildren <{
-  offersData: {
-    title: string;
-    imageUrl: string;
-    type: string;
-    price: number;
-    ratingInPercents: number;
-    isPremium: boolean;
-    id: number;
-  }[];
-}>
+type ScreenMainProps = PropsWithChildren <{offersData: offerDataType[]}>
 
 function ScreenMain({offersData}: ScreenMainProps): JSX.Element {
   return (
