@@ -40,7 +40,7 @@ function Layout(): JSX.Element {
     // return WrapperPageClassNamesEnum[locationName];
   };
 
-  console.log(WrapperPageClassNamesEnum['Login']);
+  // console.log(WrapperPageClassNamesEnum['Login']);
 
   return (
     <WrapperPage elementClasses={getWrapperPageClassNames()}>
