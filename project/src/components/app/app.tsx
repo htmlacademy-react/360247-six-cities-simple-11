@@ -6,6 +6,7 @@ import ScreenMain from '../../pages/screen-main/screen-main';
 import ScreenNotFound from '../../pages/screen-not-found/screen-not-found';
 import ScreenOffer from '../../pages/screen-offer/screen-offer';
 import { AppRoute, offerDataType } from '../../types';
+import Layout from '../layout/layout';
 
 //#todo вынести из экранов хэдер и общие обертки - layout/outlet
 //#подключить Helmet
@@ -19,7 +20,7 @@ function App({offersData}: AppScreenProps): JSX.Element {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path={AppRoute.Root}>
+        <Route path={AppRoute.Root} element={<Layout />}>
           <Route index
             element={<ScreenMain offersData = {offersData} />}
           />

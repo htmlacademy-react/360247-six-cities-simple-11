@@ -1,5 +1,4 @@
 import Gallery from '../../components/gallery/gallery';
-import Header from '../../components/header/header';
 import LabelPremium from '../../components/label-premium/label-premium';
 import OfferClosestPlaces from '../../components/offer-closest-places/offer-closest-places';
 import OfferDetails from '../../components/offer-details/offer-details';
@@ -14,32 +13,29 @@ import OfferTitle from '../../components/offer-title/offer-title';
 function ScreenOffer(): JSX.Element {
 
   return (
-    <div className="page">
-      <Header />
-      <main className="page__main page__main--property">
-        <section className="property">
-          <Gallery />
-          <div className="property__container container">
-            <div className="property__wrapper">
-              <div className="property__mark">
-                <LabelPremium />
-              </div>
-              <OfferTitle />
-              <OfferRating />
-              <OfferFeatures />
-              <OfferPrice />
-              <OfferDetails />
-              <OfferHostInfo />
-              <OfferReviews />
+    <main className="page__main page__main--property">
+      <section className="property">
+        <Gallery />
+        <div className="property__container container">
+          <div className="property__wrapper">
+            <div className="property__mark">
+              <LabelPremium />
             </div>
+            <OfferTitle />
+            <OfferRating />
+            <OfferFeatures />
+            <OfferPrice />
+            <OfferDetails />
+            <OfferHostInfo />
+            <OfferReviews />
           </div>
-          <OfferMap />
-        </section>
-        <div className="container">
-          <OfferClosestPlaces />
         </div>
-      </main>
-    </div>
+        <OfferMap />
+      </section>
+      <div className="container">
+        <OfferClosestPlaces />
+      </div>
+    </main>
   );
 }
 
