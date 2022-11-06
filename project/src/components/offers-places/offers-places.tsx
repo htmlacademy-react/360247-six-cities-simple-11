@@ -1,18 +1,9 @@
 import { PropsWithChildren } from 'react';
+import { offerDataType } from '../../types';
 import OffersFilters from '../offers-filters/offers-filters';
 import OfferList from '../offers-list/offers-list';
 
-type OfferPlacesProps = PropsWithChildren <{
-  offersData: {
-    title: string;
-    imageUrl: string;
-    type: string;
-    price: number;
-    ratingInPercents: number;
-    isPremium: boolean;
-    id: number;
-  }[];
-}>
+type OfferPlacesProps = PropsWithChildren <{offersData: offerDataType[]}>
 
 function OfferPlaces({offersData}: OfferPlacesProps): JSX.Element {
 

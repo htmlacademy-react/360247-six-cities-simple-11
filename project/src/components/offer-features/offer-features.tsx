@@ -1,15 +1,21 @@
-function OfferFeatures(): JSX.Element {
+type offerFeaturesProps = {
+  offerType: string;
+  bedroomsQuantity: number;
+  maxAdults: number;
+}
+
+function OfferFeatures({offerType, bedroomsQuantity, maxAdults}: offerFeaturesProps): JSX.Element {
 
   return (
     <ul className="property__features">
       <li className="property__feature property__feature--entire">
-              Apartment
+        {offerType}
       </li>
       <li className="property__feature property__feature--bedrooms">
-              3 Bedrooms
+        {bedroomsQuantity} Bedrooms
       </li>
       <li className="property__feature property__feature--adults">
-              Max 4 adults
+        Max {maxAdults} adults
       </li>
     </ul>
   );

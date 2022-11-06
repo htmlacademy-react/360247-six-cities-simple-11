@@ -1,4 +1,12 @@
-function OfferHostInfo(): JSX.Element {
+type offerHostInfoProps = {
+  avatarUrl: string;
+  id: number;
+  isPro: boolean;
+  name: string;
+  offerDescription: string;
+}
+
+function OfferHostInfo({avatarUrl, id, isPro, name , offerDescription}: offerHostInfoProps): JSX.Element {
 
   return (
     <div className="property__host">
@@ -7,26 +15,24 @@ function OfferHostInfo(): JSX.Element {
         <div className="property__avatar-wrapper property__avatar-wrapper--pro user__avatar-wrapper">
           <img
             className="property__avatar user__avatar"
-            src="img/avatar-angelina.jpg"
+            src={avatarUrl}
             width={74}
             height={74}
             alt="Host avatar"
           />
         </div>
-        <span className="property__user-name">Angelina</span>
-        <span className="property__user-status">Pro</span>
+        <span className="property__user-name">{name}</span>
+        {isPro && <span className="property__user-status">Pro</span>}
       </div>
       <div className="property__description">
         <p className="property__text">
-                A quiet cozy and picturesque that hides behind a a river by the
-                unique lightness of Amsterdam. The building is green and from
-                18th century.
+          {offerDescription}
         </p>
-        <p className="property__text">
+        {/* <p className="property__text">
                 An independent House, strategically located between Rembrand
                 Square and National Opera, but where the bustle of the city
                 comes to rest in this alley flowery and colorful.
-        </p>
+        </p> */}
       </div>
     </div>
   );

@@ -2,13 +2,27 @@ import { PropsWithChildren } from 'react';
 import { offerDataType, AppRoute } from '../../types';
 import LabelPremium from '../label-premium/label-premium';
 import { Link } from 'react-router-dom';
+import { getPersantageFromRatingValue, getHousingType } from '../../utils/utils';
+import RatingStars from '../rating-stars/rating-stars';
 
-type OfferCardProps = PropsWithChildren <{offerData: offerDataType}>
+type OfferCardProps = PropsWithChildren <{
+  offerData: offerDataType;
+  handleMouseEnter: (id: number) => void;
+  handleMouseLeave: () => void;
+}>
 
-function OfferCard({offerData}: OfferCardProps): JSX.Element {
+function OfferCard({offerData, handleMouseEnter, handleMouseLeave}: OfferCardProps): JSX.Element {
+
+  function handleCardMouseEnter(evt: object): void {
+    handleMouseEnter(offerData.id);
+  }
 
   return (
-    <article className="cities__card place-card">
+    <article
+      onMouseEnter={handleCardMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="cities__card place-card"
+    >
       {offerData.isPremium &&
         <div className="place-card__mark">
           <LabelPremium />
@@ -17,10 +31,10 @@ function OfferCard({offerData}: OfferCardProps): JSX.Element {
         <Link to={`${AppRoute.Room}/${offerData.id}`}>
           <img
             className="place-card__image"
-            src={offerData.imageUrl}
+            src={offerData.previewImage}
             width={260}
             height={200}
-            alt="Place image"
+            alt="Place"
           />
         </Link>
       </div>
@@ -33,7 +47,7 @@ function OfferCard({offerData}: OfferCardProps): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: `${offerData.ratingInPercents}%` }} />
+            <RatingStars ratingInPercents={getPersantageFromRatingValue(offerData.rating)} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
@@ -42,7 +56,7 @@ function OfferCard({offerData}: OfferCardProps): JSX.Element {
             {offerData.title}
           </Link>
         </h2>
-        <p className="place-card__type">{offerData.type}</p>
+        <p className="place-card__type">{getHousingType(offerData.type)}</p>
       </div>
     </article>
   );
