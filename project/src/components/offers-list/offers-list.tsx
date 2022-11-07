@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import { offerDataType } from '../../types';
 import OfferCard from '../offer-card/offer-card';
 

@@ -17,6 +17,8 @@ function FormReviews(): JSX.Element {
     setFormData({...formData, [name]: value});
   };
 
+  console.log(formData);
+
   return (
     <form className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">
@@ -38,7 +40,7 @@ function FormReviews(): JSX.Element {
         id="review"
         name="review"
         placeholder="Tell how was your stay, what you like and what can be improved"
-        defaultValue={formData.review}
+        value={formData.review}
         onChange={handleFieldChange}
       />
       <div className="reviews__button-wrapper">
