@@ -1,7 +1,9 @@
 import { HousingTypesEnum } from '../types';
 
+const RATING_STARS_QUANTITY = 5;
+
 export const getPersantageFromRatingValue = function (value: number):number {
-  return Math.round(value) * 100 / 5;
+  return Math.round(value) * 100 / RATING_STARS_QUANTITY;
 };
 
 export const getHousingType = function(type: string): string {
