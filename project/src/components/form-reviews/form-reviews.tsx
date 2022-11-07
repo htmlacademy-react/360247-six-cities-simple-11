@@ -17,8 +17,6 @@ function FormReviews(): JSX.Element {
     setFormData({...formData, [name]: value});
   };
 
-  console.log(formData);
-
   return (
     <form className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">
