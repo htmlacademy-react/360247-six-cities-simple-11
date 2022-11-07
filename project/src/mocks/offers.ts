@@ -129,7 +129,7 @@ export const offersDataMock: offerDataType[] = [
     'host': {
       'avatarUrl': 'img/avatar-max.jpg',
       'id': 17,
-      'isPro': true,
+      'isPro': false,
       'name': 'Inokentiy'
     },
     'id': 40,
