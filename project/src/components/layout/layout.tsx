@@ -19,7 +19,7 @@ function Layout(): JSX.Element {
     Root = 'page--gray page--main',
     NotFound = 'page--gray page--404'
   }
-  //#todo refactor with generics
+
   const getWrapperPageClassNames = function(): string {
 
     switch (currentLocationWithoutRouteParams)
@@ -36,7 +36,6 @@ function Layout(): JSX.Element {
       default:
         return WrapperPageClassNamesEnum.NotFound;
     }
-    // return WrapperPageClassNamesEnum[currentLocationKey];
   };
 
   const wrapperPageClassNames = getWrapperPageClassNames();

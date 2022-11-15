@@ -8,11 +8,6 @@ import ScreenOffer from '../../pages/screen-offer/screen-offer';
 import { AppRoute, offerDataType } from '../../types';
 import Layout from '../layout/layout';
 
-//#todo
-//#подключить Helmet
-//#оформить страницу 404?
-
-
 type AppScreenProps = PropsWithChildren <{offersData: offerDataType[]}>
 
 function App({offersData}: AppScreenProps): JSX.Element {
