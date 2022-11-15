@@ -13,17 +13,13 @@ function Layout(): JSX.Element {
   const currentLocation: string = useLocation().pathname;
   const currentLocationWithoutRouteParams: string = id ? currentLocation.replace(`/${id}`, '') : currentLocation;
 
-  // function getKeyNameByStringValue(value: string) {
-  //   return Object.entries(AppRoute).find(([key, val]) => val === value)?.[0];
-  // }
-  // const currentLocationName = getKeyNameByStringValue(currentLocationWithoutRouteParams);
-
   enum WrapperPageClassNamesEnum {
     Login = 'page--gray page--login',
     Room = '',
-    Root = 'page--gray page--main'
+    Root = 'page--gray page--main',
+    NotFound = 'page--gray page--404'
   }
-  //#todo refactor with generics
+
   const getWrapperPageClassNames = function(): string {
 
     switch (currentLocationWithoutRouteParams)
@@ -34,17 +30,20 @@ function Layout(): JSX.Element {
       case '/offer':
         return WrapperPageClassNamesEnum.Room;
 
-      default:
+      case '/':
         return WrapperPageClassNamesEnum.Root;
+
+      default:
+        return WrapperPageClassNamesEnum.NotFound;
     }
-    // return WrapperPageClassNamesEnum[locationName];
   };
 
-  // console.log(WrapperPageClassNamesEnum['Login']);
+  const wrapperPageClassNames = getWrapperPageClassNames();
 
   return (
-    <WrapperPage elementClasses={getWrapperPageClassNames()}>
-      <Header isHeaderAuthToBeRendered={currentLocationWithoutRouteParams !== AppRoute.Login} />
+    <WrapperPage elementClasses={wrapperPageClassNames}>
+      {wrapperPageClassNames !== WrapperPageClassNamesEnum.NotFound &&
+      <Header isHeaderAuthToBeRendered={currentLocationWithoutRouteParams !== AppRoute.Login} />}
       <Outlet />
     </WrapperPage>
   );

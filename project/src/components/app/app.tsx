@@ -8,11 +8,6 @@ import ScreenOffer from '../../pages/screen-offer/screen-offer';
 import { AppRoute, offerDataType } from '../../types';
 import Layout from '../layout/layout';
 
-//#todo вынести из экранов хэдер и общие обертки - layout/outlet
-//#подключить Helmet
-//#оформить страницу 404?
-
-
 type AppScreenProps = PropsWithChildren <{offersData: offerDataType[]}>
 
 function App({offersData}: AppScreenProps): JSX.Element {
@@ -30,7 +25,7 @@ function App({offersData}: AppScreenProps): JSX.Element {
           />
           <Route
             path={`${AppRoute.Room}/:id`}
-            element={<ScreenOffer />}
+            element={<ScreenOffer offersData = {offersData} />}
           />
           <Route
             path='*'

@@ -14,7 +14,7 @@ function OfferClosestPlaces(): JSX.Element {
                 src="img/room.jpg"
                 width={260}
                 height={200}
-                alt="Place image"
+                alt="Place"
               />
             </a>
           </div>
@@ -45,7 +45,7 @@ function OfferClosestPlaces(): JSX.Element {
                 src="img/apartment-02.jpg"
                 width={260}
                 height={200}
-                alt="Place image"
+                alt="Place"
               />
             </a>
           </div>
@@ -79,7 +79,7 @@ function OfferClosestPlaces(): JSX.Element {
                 src="img/apartment-03.jpg"
                 width={260}
                 height={200}
-                alt="Place image"
+                alt="Place"
               />
             </a>
           </div>
