@@ -45,7 +45,8 @@ function Map({city, points, selectedPointId}: MapProps): JSX.Element {
             selectedPointId !== undefined && point.id === selectedPointId
               ? currentCustomIcon
               : defaultCustomIcon
-          );
+          )
+          .addTo(map);
 
         markersGroup.push(marker);
       });
