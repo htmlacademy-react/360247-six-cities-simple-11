@@ -1,12 +1,18 @@
 import NavCities from '../../components/nav-cities/nav-cities';
 import Map from '../../components/map/map';
 import OffersPlaces from '../../components/offers-places/offers-places';
-import { PropsWithChildren } from 'react';
 import { offerDataType } from '../../types';
+import { useState } from 'react';
 
-type ScreenMainProps = PropsWithChildren <{offersData: offerDataType[]}>
+type ScreenMainProps = {offersData: offerDataType[]}
 
 function ScreenMain({offersData}: ScreenMainProps): JSX.Element {
+
+  const [activeOfferCardId, setActiveOfferCardId] = useState<number>(0);
+
+  const points = offersData.map(({location, id}) => (
+    {location, id}
+  ));
 
   return (
     <main className="page__main page__main--index">
@@ -14,8 +20,8 @@ function ScreenMain({offersData}: ScreenMainProps): JSX.Element {
       <NavCities />
       <div className="cities">
         <div className="cities__places-container container">
-          <OffersPlaces offersData={offersData} />
-          <Map />
+          <OffersPlaces setActiveOfferCardId={setActiveOfferCardId} offersData={offersData} />
+          <Map city={offersData[0].city} points={points} selectedPointId={activeOfferCardId} />
         </div>
       </div>
     </main>
