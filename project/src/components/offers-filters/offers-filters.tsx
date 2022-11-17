@@ -1,5 +1,7 @@
 function OffersFilters(): JSX.Element {
 
+  // places__options--opened
+
   return (
     <form className="places__sorting" action="#" method="get">
       <span className="places__sorting-caption">Sort by</span>
@@ -9,7 +11,7 @@ function OffersFilters(): JSX.Element {
           <use xlinkHref="#icon-arrow-select" />
         </svg>
       </span>
-      <ul className="places__options places__options--custom places__options--opened">
+      <ul className="places__options places__options--custom">
         <li
           className="places__option places__option--active"
           tabIndex={0}
